@@ -11,3 +11,10 @@ body {
 a {
   color: #00B7FF;
 }
+
+.locmap{
+  background-image: url('/images/map.jpeg');
+  background-size: 300px;
+  height: 200px;
+  width: 300px;
+}
