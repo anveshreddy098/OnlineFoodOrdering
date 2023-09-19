@@ -1,7 +1,10 @@
-/* GET 'home' page */
-const homelist = (req, res) => {
 
-    res.render('locations-list', { title: 'Home' });
+const {review} = require('../../app_api/models/location')
+/* GET 'home' page */
+const homelist = async (req, res) => {
+
+        res.render('locations-list', { title: 'Home' });
+
    };
    /* GET 'Location info' page */
 const locationInfo = (req, res) => {
@@ -12,8 +15,9 @@ const locationInfo = (req, res) => {
 const addReview = (req, res) => {
     res.render('location-review-form', { title: 'Add review' });
    };
+
 module.exports = {
     homelist,
     locationInfo,
-    addReview
+    addReview,
    };

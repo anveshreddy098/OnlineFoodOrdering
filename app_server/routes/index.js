@@ -8,4 +8,6 @@ router.get('/location', ctrlLocations.locationInfo);
 router.get('/location/review/new', ctrlLocations.addReview);
 /* Other pages */
 router.get('/about', ctrlOthers.about);
+router.get('/signin', ctrlOthers.signin);
+router.get('/register', ctrlOthers.register);
 module.exports = router;
