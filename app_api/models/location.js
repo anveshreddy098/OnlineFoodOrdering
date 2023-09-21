@@ -29,5 +29,5 @@ var openingTimeSchema = new mongoose.Schema({
     }
 });
 
-const review = mongoose.model('review', reviewSchema);
-module.exports = { review};
+const Review = mongoose.model('Review', reviewSchema);
+module.exports = { Review};
