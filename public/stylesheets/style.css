@@ -36,3 +36,19 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.tail{
+  background-image: url('/images/nonvegbiryani.jpeg');
+  background-size: 300px;
+  height: 200px;
+  width: 300px;
+}
+.font{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.tail1{
+  background-image: url('/images/muttonbiryani.jpeg');
+  background-size: 300px;
+  height: 160px;
+  width: 300px;
+}

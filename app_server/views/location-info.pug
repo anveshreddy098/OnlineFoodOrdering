@@ -4,18 +4,19 @@ block content
     .row.banner
         .col-12
             h1= location.name
+
     .row
         .col-12.col-lg-9
             .row
                 .col-12.col-md-6
-                    p.rating &nbsp;&nbsp;&nbsp;
+                    p.rating
                         i.fas.fa-star
                         i.fas.fa-star
                         i.fas.fa-star
                         i.far.fa-star
                         i.far.fa-star  
-                    p 125 High Street, Reading, RG6 1PS
                     .card.card-primary
+
                         .card-block
                             h2.card-title Timings
                             p.card-text Days: #{location.days}
@@ -37,11 +38,11 @@ block content
                                 i.fa.fa-star 
                             | &nbsp;Premium wifi
                             | &nbsp;
+
                 .col-12.col-md-6.location-map
                     .card.card-primary
                         .card-block
-                            h2.card-title Location map
-                            .locmap
+                            
     .row
         .col-12
             .card.card-primary.review-card
@@ -62,6 +63,4 @@ block content
                                     span.review.dash Timestamp : #{r.review.createdOn}
                                 .col-12
                                     span.review.dash= r.review.reviewText
-                            
-                        
         .col-12.col-lg-3

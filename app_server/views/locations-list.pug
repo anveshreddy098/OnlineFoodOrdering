@@ -10,10 +10,12 @@ block content
         .col-12.col-md-8
             .card
                 .card-block
+
                     each location in locations
                         h4
                             a(href="/location/" +location.id)= location.name
                             small &nbsp;
+
                             span.glyphicon.glyphicon-heart
                             span.glyphicon.glyphicon-heart
                             span.glyphicon.glyphicon-heart
@@ -25,5 +27,4 @@ block content
                             span.badge.badge-warning Hot drinks
                             span.badge.badge-warning Food
                             span.badge.badge-warning Premium wifi 
-
         .col-12.col-md-4
