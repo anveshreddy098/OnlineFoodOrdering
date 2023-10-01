@@ -16,7 +16,14 @@ var reviewSchema = new mongoose.Schema({
     }
 });
 
-var openingTimeSchema = new mongoose.Schema({ 
+const Review = mongoose.model('Review', reviewSchema);
+
+var locationSchema = new mongoose.Schema({ 
+    name : {
+        type: String,
+        required: true
+    },
+    description: String,
     days: {
         type: String,
         required: true
@@ -25,9 +32,19 @@ var openingTimeSchema = new mongoose.Schema({
     closing: String,
     closed:{
         type:Boolean,
-        required:true
-    }
+        required:true,
+        default: false
+    },
+
+    reviews:  [{ 
+        review: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Review'
+        }
+    }]
 });
 
-const Review = mongoose.model('Review', reviewSchema);
-module.exports = { Review};
+
+const Location = mongoose.model('Location', locationSchema);
+
+module.exports = {Review, Location, locationSchema};
