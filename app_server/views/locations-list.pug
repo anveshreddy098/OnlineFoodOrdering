@@ -1,25 +1,30 @@
 extends layout
+
 block content
     .row.banner
         .col-12
-        h1.head Food Hut
-        h2.heading Find the best food here...
+            h1.head Food Hut
+            h2.heading Find the best food here...
+
     .row
         .col-12.col-md-8
             .card
                 .card-block
-                    h4
-                        a(href="/location") Non-veg Biryanis
-                        .tail
-                        small &nbsp;
+
+                    each location in locations
+                        h4
+                            a(href="/location/" +location.id)= location.name
+                            small &nbsp;
+
                             span.glyphicon.glyphicon-heart
                             span.glyphicon.glyphicon-heart
                             span.glyphicon.glyphicon-heart
                             span.glyphicon.glyphicon-heart-empty
                             span.glyphicon.glyphicon-heart-empty                       
-                    p.facilities
-                        span.badge.badge-warning spicy
-                        span.badge.badge-warning mild...
-                        span.badge.badge-warning normal 
-                    h4
+                            span.badge.pull-right.badge-default 100m
+                        p.address 125 High Street, Reading, RG6 1PS
+                        p.facilities
+                            span.badge.badge-warning Hot drinks
+                            span.badge.badge-warning Food
+                            span.badge.badge-warning Premium wifi 
         .col-12.col-md-4
