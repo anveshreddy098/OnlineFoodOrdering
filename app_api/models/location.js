@@ -18,24 +18,25 @@ var reviewSchema = new mongoose.Schema({
 
 const Review = mongoose.model('Review', reviewSchema);
 
-var locationSchema = new mongoose.Schema({ 
+var itemSchema = new mongoose.Schema({ 
     name : {
         type: String,
         required: true
     },
-    description: String,
-    days: {
+    price: {
+        type: Number,
+        required: true
+    },
+    image: {
         type: String,
         required: true
     },
-    opening: String,
-    closing: String,
-    closed:{
-        type:Boolean,
-        required:true,
-        default: false
+    rating: {
+        type: Number,
+        min: 0,
+        max: 5,
+        default: 5
     },
-
     reviews:  [{ 
         review: {
             type: mongoose.Schema.Types.ObjectId,
@@ -45,6 +46,6 @@ var locationSchema = new mongoose.Schema({
 });
 
 
-const Location = mongoose.model('Location', locationSchema);
+const Item = mongoose.model('Item', itemSchema);
 
-module.exports = {Review, Location, locationSchema};
+module.exports = {Review, Item};

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const ctrlLocations =require('../controllers/location');
 const ctrlOthers = require('../controllers/others');
-const { Location } = require('../../app_api/models/location');
+const {Item } = require('../../app_api/models/location');
 /* Locations pages */
 router.get('/', ctrlLocations.homelist);
 router.get('/location/:locationId', ctrlLocations.locationInfo);
@@ -15,9 +15,17 @@ router.get('/locations/new', (req, res)=>{
 });
 router.post('/locations/new', async (req, res)=>{
     const body = req.body;
-    const loc = new Location(body);
-    loc.save()
-    res.redirect('/');
+    try {
+        body.price = parseInt(body.price);
+        body.rating = parseInt(body.rating) || 5;
+        body.image = '/images/' + body.image + '.jpeg';
+        const item = new Item(body);
+        item.save()
+        res.redirect('/');        
+    } catch(err) {
+        console.log(err);
+        res.status(500).send('Internal Server Error');
+    }
 })
 
 

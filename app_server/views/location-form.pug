@@ -1,20 +1,18 @@
-form(method="POST")
-  label(for="name") Location Name:
-  input#name(type="text", name="name", required)
-  
-  label(for="description") Description:
-  textarea#description(name="description" rows="4" cols="50", required)
-  
-  label(for="days") Days of Operation:
-  input#days(type="text", name="days", required)
-  
-  label(for="opening") Opening Time:
-  input#opening(type="text", name="opening", required)
-  
-  label(for="closing") Closing Time:
-  input#closing(type="text", name="closing", required)
-  
-  label(for="closed") Closed:
-  input#closed(type="checkbox", name="closed")
-  
-  button(type="submit") Create Location
+extends layout
+block content
+  link(rel='stylesheet', href='/stylesheets/form.css')
+  .form-block
+    form(method="POST")
+      label(for="name") Item Name:
+      input#name(type="text", name="name", required)
+      
+      label(for="price") Item Price:
+      input#price(type="text", name="price", required)
+      
+      label(for="opening") Rating:
+      input#rating(type="text", name="rating")
+
+      label(for="image") Image Path:
+      input#image(type="text", name="image", required)
+      
+      button(type="submit") Create Item

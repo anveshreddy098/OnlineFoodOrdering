@@ -1,22 +1,22 @@
 
-const {Review, Location} = require('../../app_api/models/location')
+const {Review, Item} = require('../../app_api/models/location')
 
 
 /* GET 'home' page */
 const homelist = async (req, res) => {
-    const locations = await Location.find();
-    res.render('locations-list', {locations});
+    const items = await Item.find();
+    res.render('locations-list', {items});
 
    };
    /* GET 'Location info' page */
    const locationInfo = async (req, res) => {
     const { locationId } = req.params;
     try {
-        const location = await Location.findById(locationId).populate('reviews.review');
-        res.render('location-info', { title: 'Location info', location: location });
+        const item = await Item.findById(locationId).populate('reviews.review');
+        res.render('location-info', { title: 'Location info', item: item });
     } catch (error) {
         console.error(error);
-        res.status(500).send('Error fetching location information');
+        res.status(500).send('Error fetching Item information');
     }
 };
 
@@ -32,16 +32,16 @@ const addReview_post = async (req, res) => {
         })
         newReview.save();
 
-        const location = await Location.findById(locationId);
-        location.reviews.push({review: newReview});
-        location.save();
-
+        const item = await Item.findById(locationId);
+        item.reviews.push({review: newReview});
+        item.save();
         console.log('saved successfully')
+        res.redirect('/');
     } catch(error){
         console.error(error)
+        res.status(500).send('Internal Server Error');
     }
-    res.redirect('/')
-   };
+};
 
 
 const addReview_get = (req, res) => {
