@@ -1,6 +1,7 @@
 extends layout
 
 block content
+    link(rel='stylesheet', href='/stylesheets/itemList.css')
     .row.banner
         .col-12
             h1.head Food Hut
@@ -11,19 +12,23 @@ block content
             .card
                 .card-block
 
-                    each location in locations
-                        h4
-                            a(href="/location/" +location.id)= location.name
-                            small &nbsp;
-
-                            span.glyphicon.glyphicon-heart
-                            span.glyphicon.glyphicon-heart
-                            span.glyphicon.glyphicon-heart
-                            span.glyphicon.glyphicon-heart-empty
-                            span.glyphicon.glyphicon-heart-empty   
-                            .tail                    
-                        p.features
-                            span.badge.badge-warning SPICY
-                            span.badge.badge-warning MILD
-                            span.badge.badge-warning FRIED
+                    each item in items
+                        .item-block
+                            h4
+                                
+                                a(href="/location/" +item.id)= item.name 
+                                br
+                                span.price price: #{item.price}
+                                br
+                                span.glyphicon.glyphicon-heart
+                                span.glyphicon.glyphicon-heart
+                                span.glyphicon.glyphicon-heart
+                                span.glyphicon.glyphicon-heart-empty
+                                span.glyphicon.glyphicon-heart-empty 
+                                br
+                                img(src=item.image style="height:150px;")                   
+                            p.features
+                                span.badge.badge-warning SPICY
+                                span.badge.badge-warning MILD
+                                span.badge.badge-warning FRIED
         .col-12.col-md-4
