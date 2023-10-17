@@ -1,18 +1,22 @@
+* {
+  font-family:'Times New Roman', Times, serif;
+}
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
   background-color: black;
 }
 
-.heading{
+/* .heading{
   font-family: 'Times New Roman', Times, serif;
-}
+} */
 
-a {
+/* a {
   color: whitesmoke;
   font-size: 15px;
   font-family: 'Times New Roman', Times, serif;
-}
+} */
 
 .locmap{
   background-image: url('/images/map.jpeg');
@@ -20,35 +24,13 @@ a {
   height: 200px;
   width: 300px;
 }
-.dash{
+/* .dash{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
-}
+} */
 .head{
-    font-family: 'Times New Roman', Times, serif;
     font-weight: 100;
     font-size: 50px;
 }
-.picture{
-     background-image: url('/images/foodhut.jpeg');
-     height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.tail{
-  background-image: url('/images/nonvegbiryani.jpeg');
-  background-size: 300px;
-  height: 200px;
-  width: 300px;
-}
-.font{
-  font-family: 'Times New Roman', Times, serif;
-}
 
-.tail1{
-  background-image: url('/images/muttonbiryani.jpeg');
-  background-size: 300px;
-  height: 160px;
-  width: 300px;
-}
+

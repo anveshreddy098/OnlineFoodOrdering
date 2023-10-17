@@ -20,15 +20,8 @@ block content
                                 br
                                 span.price price: #{item.price}
                                 br
-                                span.glyphicon.glyphicon-heart
-                                span.glyphicon.glyphicon-heart
-                                span.glyphicon.glyphicon-heart
-                                span.glyphicon.glyphicon-heart-empty
-                                span.glyphicon.glyphicon-heart-empty 
+                                span.rating(style="color:black;") Rating: #{item.rating} 
                                 br
-                                img(src=item.image style="height:150px;")                   
-                            p.features
-                                span.badge.badge-warning SPICY
-                                span.badge.badge-warning MILD
-                                span.badge.badge-warning FRIED
+                                img(src=item.image style="height:150px;")   
+                        br                
         .col-12.col-md-4
